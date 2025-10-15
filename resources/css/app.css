@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --color-facverde-50: oklch(0.982 0.018 120.50);
+    --color-facverde-100: oklch(0.950 0.045 121.00);
+    --color-facverde-200: oklch(0.910 0.080 122.00);
+    --color-facverde-300: oklch(0.850 0.130 123.00);
+    --color-facverde-400: oklch(0.760 0.175 124.00);
+    --color-facverde-500: oklch(0.690 0.200 125.00);
+    --color-facverde-600: oklch(0.600 0.190 126.00);
+    --color-facverde-700: oklch(0.510 0.160 127.00);
+    --color-facverde-800: oklch(0.440 0.125 128.00);
+    --color-facverde-900: oklch(0.390 0.095 129.00);
+    --color-facverde-950: oklch(0.275 0.070 129.50);
+
+
+    /* light theme */
+    --color-surface: var(--color-white);
+    --color-surface-alt: var(--color-gray-200);
+    --color-on-surface: var(--color-slate-600);
+    --color-on-surface-strong: var(--color-red-600);
+    --color-primary: var(--color-red-600);
+    --color-on-primary: var(--color-slate-100);
+    --color-secondary: var(--color-red-600);
+    --color-on-secondary: var(--color-slate-100);
+    --color-outline: var(--color-red-600);
+    --color-outline-strong: var(--color-red-600);
+
+    /* dark theme */
+    --color-surface-dark: var(--color-black);
+    --color-surface-dark-alt: var(--color-gray-600);
+    --color-on-surface-dark: var(--color-violet-100);
+    --color-on-surface-dark-strong: var(--color-red-600);
+    --color-primary-dark: var(--color-red-600);
+    --color-on-primary-dark: var(--color-black);
+    --color-secondary-dark: var(--color-red-600);
+    --color-on-secondary-dark: var(--color-white);
+    --color-outline-dark: var(--color-red-600);
+    --color-outline-dark-strong: var(--color-red-600);
+
+    /* shared colors */
+    --color-info: oklch(0.640 0.140 245.00);
+    --color-on-info: var(--color-slate-100);
+    --color-success: oklch(0.690 0.190 125.00);
+    --color-on-success: var(--color-slate-100);
+    --color-warning: oklch(0.690 0.190 87.00);
+    --color-on-warning: var(--color-slate-900);
+    --color-danger: oklch(0.510 0.190 336.00);
+    --color-on-danger: var(--color-slate-100);
+
+    /* border radius */
+    --radius-radius: var(--radius-none);
+}
+
+:root {
+  color-scheme: only light;
+  font-family:'Courier New', Courier, monospace
+}
+.dark {
+  /* Neutraliza estilos oscuros */
+  --tw-bg-opacity: initial;
+  --tw-text-opacity: initial;
+}
+/* https://www.penguinui.com/theme#typography?config=halloween_poppins_poppins_false_-none_red-600_red-600_red-600_red-600_white_black_gray-100_gray-900_slate-600_red-600_violet-100_red-600_slate-100_black_slate-100_white_red-600_red-600_red-600_red-600_red-500_slate-100_sky-500_slate-100_amber-500_slate-900_green-400_slate-900 */
