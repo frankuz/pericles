@@ -15,12 +15,11 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased text-sm  text-on-surface dark:text-on-surface-dark" >
-        <div class="min-h-screen flex flex-col  items-center bg-surface dark:bg-surface-dark">
-            <div class="mt-5 mb-10">
+    <body class="font-sans antialiased text-sm bg-surface dark:bg-surface-dark text-on-surface dark:text-on-surface-dark" >
+        <div class="min-h-screen flex flex-col gap-10 items-center px-2 sm:px-5">
+            <div class="mt-5">
                 <img style="width: 200px" src="https://www.fundacionalqueriacavelier.org/wp-content/uploads/2025/09/logo-fundacion-alqueria-v15-200-70-no-background.png" />
             </div>
-
                 {{ $slot }}
         </div>
     </body>

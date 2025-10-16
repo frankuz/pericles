@@ -15,7 +15,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased text-sm text-on-surface dark:text-on-surface-dark">
+    <body class="font-sans antialiased text-sm bg-surface dark:bg-surface-dark text-on-surface dark:text-on-surface-dark">
         <div x-data="{ showSidebar: false }" class="relative flex w-full flex-col md:flex-row">
             <!-- This allows screen readers to skip the sidebar and go directly to the main content. -->
             <a class="sr-only" href="#main-content">skip to the main content</a>
@@ -26,7 +26,7 @@
             @include('layouts.nav')
 
             <!-- main content  -->
-            <div id="main-content" class="h-svh w-full overflow-y-auto p-4 bg-surface dark:bg-surface-dark">
+            <div id="main-content" class="h-svh w-full overflow-y-auto p-4">
                 {{ $slot }}
             </div>
 
