@@ -15,7 +15,7 @@
                             <dd class="text-gray-900">{{ $grupo->nombre }}</dd>
                         </div>
                         <div class="py-3 flex justify-between text-sm font-medium">
-                            <dt class="text-gray-500">Facilitador</dt>
+                            <dt class="text-gray-500">Asesor</dt>
                             <dd class="text-gray-900">{{ $grupo->user->name ?? 'N/A' }}</dd>
                         </div>
                     </dl>

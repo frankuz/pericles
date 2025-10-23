@@ -54,9 +54,9 @@ class User extends Authenticatable
         return $this->hasMany(Grupo::class);
     }
 
-    public function institucion()
+    public function instituciones()
     {
-        return $this->belongsTo(Institucion::class);
+        return $this->belongsToMany(Institucion::class);
     }
 
     public function sendPasswordResetNotification($token): void

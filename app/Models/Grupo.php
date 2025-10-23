@@ -14,7 +14,7 @@ class Grupo extends Model
         'user_id',
     ];
     
-    // Relación Inversa (el facilitador)
+    // Relación Inversa (el asesor)
     public function user()
     {
         return $this->belongsTo(User::class);

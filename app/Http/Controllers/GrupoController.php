@@ -16,22 +16,21 @@ class GrupoController extends Controller
 
     public function create()
     {
-        // FILTRO: Obtener solo usuarios con rol 'Facilitador'
-        $facilitadores = User::where('rol', 'Facilitador')->orderBy('name')->get();
-        return view('grupos.create', compact('facilitadores'));
+        $asesores = User::where('rol', 'ASESOR')->orderBy('name')->get();
+        return view('grupos.create', compact('asesores'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'nombre' => 'required|string|max:50',
-            // Aseguramos que el ID exista en la tabla users Y que tenga el rol 'Facilitador'
+            // Aseguramos que el ID exista en la tabla users Y que tenga el rol 'ASESOR'
             'user_id' => 'required|exists:users,id',
         ]);
 
         $user = User::findOrFail($request->user_id);
-        if ($user->rol !== 'Facilitador') {
-             return back()->withInput()->withErrors(['user_id' => 'El usuario seleccionado debe tener el rol de Facilitador.']);
+        if ($user->rol !== 'ASESOR') {
+             return back()->withInput()->withErrors(['user_id' => 'El usuario seleccionado debe tener el rol de ASESOR.']);
         }
 
         Grupo::create($request->all());
@@ -46,9 +45,8 @@ class GrupoController extends Controller
 
     public function edit(Grupo $grupo)
     {
-        // FILTRO: Obtener solo usuarios con rol 'Facilitador'
-        $facilitadores = User::where('rol', 'Facilitador')->orderBy('name')->get();
-        return view('grupos.edit', compact('grupo', 'facilitadores'));
+        $asesores = User::where('rol', 'ASESOR')->orderBy('name')->get();
+        return view('grupos.edit', compact('grupo', 'asesores'));
     }
 
     public function update(Request $request, Grupo $grupo)
@@ -59,8 +57,8 @@ class GrupoController extends Controller
         ]);
         
         $user = User::findOrFail($request->user_id);
-        if ($user->rol !== 'Facilitador') {
-             return back()->withInput()->withErrors(['user_id' => 'El usuario seleccionado debe tener el rol de Facilitador.']);
+        if ($user->rol !== 'ASESOR') {
+             return back()->withInput()->withErrors(['user_id' => 'El usuario seleccionado debe tener el rol de ASESOR.']);
         }
 
         $grupo->update($request->all());

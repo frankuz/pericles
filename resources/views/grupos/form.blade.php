@@ -7,10 +7,10 @@
 </div>
 
 <div class="mt-4">
-    <x-input-label for="user_id" :value="__('Facilitador')" /> <select id="user_id" name="user_id" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-xs mt-1 block w-full" required>
-        <option value="">Seleccione un Facilitador</option>
-        @foreach ($facilitadores as $facilitador) <option value="{{ $facilitador->id }}" @selected(old('user_id', $grupo->user_id ?? '') == $facilitador->id)>
-                {{ $facilitador->name }}
+    <x-input-label for="user_id" :value="__('Asesor')" /> <select id="user_id" name="user_id" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-xs mt-1 block w-full" required>
+        <option value="">Seleccione un Asesor</option>
+        @foreach ($asesores as $asesor) <option value="{{ $asesor->id }}" @selected(old('user_id', $grupo->user_id ?? '') == $asesor->id)>
+                {{ $asesor->name }}
             </option>
         @endforeach
     </select>

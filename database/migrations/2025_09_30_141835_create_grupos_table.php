@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', 50);
             
-            // Clave foránea a la tabla 'users' (el facilitador)
+            // Clave foránea a la tabla 'users' (el asesor)
             $table->foreignId('user_id')->constrained()->onDelete('restrict');
             
             $table->timestamps();

@@ -30,13 +30,12 @@ class InstitucionController extends Controller
         $departamentos = Departamento::orderBy('nombre')->get();
         $grupos = Grupo::orderBy('nombre')->get();
 
-        // Usuarios con rol "facilitador"
-        $facilitadores = User::where('rol', 'facilitador')
+        $asesores = User::where('rol', 'asesor')
             ->orderBy('name') // opcional, por nombre
             ->get();
 
         // Los municipios se cargarán dinámicamente con Alpine/JS en la vista
-        return view('instituciones.create', compact('departamentos', 'grupos', 'facilitadores'));
+        return view('instituciones.create', compact('departamentos', 'grupos', 'asesores'));
     }
 
     public function store(Request $request)
